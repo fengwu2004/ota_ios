@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <router-link to="/" class="item">iOS</router-link>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VersionPanel from './components/VersionPanel.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    VersionPanel
+  },
+  methods: {
+    
+  },
 }
 </script>
 
@@ -24,5 +29,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+}
+
+.item {
+
+    background: red;
+    size: 10rem;
 }
 </style>

@@ -1,8 +1,27 @@
 import Vue from 'vue'
 import App from './App.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import { createApp } from 'vue'
+import VersionPanel from './components/VersionPanel.vue'
+import EnvPanel from './components/EnvPanel.vue'
+import { Cell, CellGroup } from 'vant';
+import 'vant/lib/index.css';
 
-Vue.config.productionTip = false
+const routes = [
+    {path: '/', component: VersionPanel},
+]
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+})
+
+const app = createApp(App)
+
+app.use(router)
+
+app.use(Cell);
+
+app.use(CellGroup);
+
+app.mount('#app')
